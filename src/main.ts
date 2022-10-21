@@ -11,6 +11,7 @@ async function run(): Promise<void> {
       core.info(`The head commit is: ${pushPayload.head_commit}`)
     }
     const myToken = core.getInput('token')
+    core.info(`myToken: ${myToken}`)
     const octokit = github.getOctokit(myToken)
 
     const messages = await octokit.rest.repos.listCommits()

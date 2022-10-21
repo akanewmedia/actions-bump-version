@@ -52,6 +52,7 @@ function run() {
                 core.info(`The head commit is: ${pushPayload.head_commit}`);
             }
             const myToken = core.getInput('token');
+            core.info(`myToken: ${myToken}`);
             const octokit = github.getOctokit(myToken);
             const messages = yield octokit.rest.repos.listCommits();
             const commitMessages = messages.data.map(({ commit }) => `${commit.message}`);
