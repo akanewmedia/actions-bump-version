@@ -1,29 +1,52 @@
 {
-  "name": "gh-action-bump-version",
-  "version": "7.1.2",
+  "name": "typescript-action",
+  "version": "0.0.5",
+  "private": true,
+  "description": "TypeScript template action",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map",
+    "test": "jest",
+    "all": "yarn build && yarn format && yarn lint && yarn package"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phips28/gh-action-bump-version.git"
+    "url": "git+https://github.com/akanewmedia/actions-bump-version.git"
   },
-  "keywords": [],
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/phips28/gh-action-bump-version/issues"
-  },
-  "homepage": "https://github.com/phips28/gh-action-bump-version#readme",
-  "private": true,
-  "main": "index.js",
-  "scripts": {
-    "start": "node ./index.js",
-    "test": "jest"
-  },
+  "license": "MIT",
   "dependencies": {
-    "actions-toolkit": "^2.2.0",
-    "yargs": "^15.3.1"
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.1.1",
+    "@chronocide/fs-walk": "^1.2.3",
+    "@octokit/webhooks-schemas": "^6.5.0",
+    "@octokit/webhooks-types": "^6.5.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "jest": "^25.2.7",
-    "standard": "^14.3.3"
+    "@types/jest": "^29.1.1",
+    "@types/lodash": "^4.14.186",
+    "@types/node": "^16.10.5",
+    "@typescript-eslint/parser": "^5.39.0",
+    "@vercel/ncc": "^0.34.0",
+    "better-assert": "^1.0.2",
+    "eslint": "^8.24.0",
+    "eslint-plugin-github": "^4.3.2",
+    "eslint-plugin-jest": "^27.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.1.2",
+    "js-yaml": "^4.1.0",
+    "prettier": "2.7.1",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.8.4"
   }
 }

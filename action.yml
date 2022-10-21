@@ -1,20 +1,17 @@
 name: Update version in package.json
 description: Automated version bump for npm packages.
+author: 'Damien Sygusch'
 runs:
-  using: docker
-  image: Dockerfile
+  using: 'node16'
+  main: 'dist/index.js'
 branding:
   icon: chevron-up
   color: blue
 inputs:
-  tag-prefix:
-    description: 'Prefix that is used for the git tag'
+  token:
+    description: 'github token'
     default: ''
-    required: false
-  PACKAGEJSON_DIR:
-    description: 'Custom dir to the package'
-    default: ''
-    required: false
+    required: true
 outputs:
   update:
     description: Whether the version has update in the examined commits
