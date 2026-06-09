@@ -30,7 +30,7 @@
     "@chronocide/fs-walk": "^1.2.3",
     "@octokit/webhooks-schemas": "^6.5.0",
     "@octokit/webhooks-types": "^6.5.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.18.1"
   },
   "devDependencies": {
     "@types/jest": "^29.1.1",
